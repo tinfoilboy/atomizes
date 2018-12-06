@@ -1,7 +1,7 @@
 # atomizes
 
 A header-only HTTP/1.1 request/response builder/parser.
-Depends only on C++11 and the standard library.
+Depends only on the C++11 standard library.
 
 ## Usage
 
