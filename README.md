@@ -1,5 +1,7 @@
 # atomizes
 
+[![Build Status](https://travis-ci.com/tinfoilboy/atomizes.svg?branch=master)](https://travis-ci.com/tinfoilboy/atomizes)
+
 A header-only HTTP/1.1 request/response builder/parser.
 Depends only on the C++11 standard library.
 Uses the [Catch2](https://github.com/catchorg/Catch2) header-only library for tests.
