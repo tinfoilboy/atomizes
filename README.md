@@ -51,8 +51,8 @@ This simple message would result in the following output:
 
 ```
 HTTP/1.1 200 OK
-Content-Type: text/plain
 Connection: close
+Content-Type: text/plain
 Content-Length: 12
 
 Hello world!
@@ -71,13 +71,13 @@ To define a simple request with an `HTTPMessage` and print it to standard out, y
 
 int main()
 {
-    atomizes::HTTPMessage request;
+    atomizes::HTTPMessage response;
 
     response.SetMethod(atomizes::MessageMethod::GET)
             .SetPath("/")
-            .SetHeader("Host", "example.com")
             .SetHeader("User-Agent", "Test Agent")
-            .SetHeader("Connection", "keep-alive");
+            .SetHeader("Connection", "keep-alive")
+            .SetHeader("Host", "example.com");
 
     std::cout << response.ToString() << std::endl;
 

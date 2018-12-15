@@ -56,15 +56,15 @@ namespace atomizes
      */
     enum class MessageMethod : uint8_t
     {
-        NONE    = 0x00,
-        GET     = 0x01,
-        HEAD    = 0x02,
-        POST    = 0x03,
-        PUT     = 0x04,
-        DELETE  = 0x05,
-        CONNECT = 0x06,
-        TRACE   = 0x07,
-        PATCH   = 0x08
+        NONE,
+        GET,
+        HEAD,
+        POST,
+        PUT,
+        DELETE,
+        CONNECT,
+        TRACE,
+        PATCH
     };
 
     /**
@@ -286,10 +286,17 @@ namespace atomizes
 
         /**
          * Get the string value of a single header from the message.
+         * 
+         * Will return an empty string if the header does not exist.
          */
         inline std::string GetHeader(const std::string& name) const
         {
-            return m_headers.at(name);
+            auto find = m_headers.find(name);
+
+            if (find != m_headers.end())
+                return find->second;
+            
+            return "";
         }
 
         /**
@@ -427,7 +434,7 @@ namespace atomizes
             // automatically output the content length based on
             // the size of the body member if body isn't empty
             if (!m_body.empty())
-                output << "Content-Length: " << m_body.size() << std::endl;
+                output << "Content-Length: " << m_body.size() << CarriageReturn;
 
             // seperate headers and body with an extra carriage return
             output << CarriageReturn;
@@ -528,13 +535,13 @@ namespace atomizes
      */
     enum class MessageParserState : uint8_t
     {
-        NONE                = 0x00,
-        PARSING_START_LINE  = 0x01,
-        START_LINE_REQUEST  = 0x02,
-        START_LINE_RESPONSE = 0x03,
-        HEADER_KEY          = 0x04,
-        HEADER_VALUE        = 0x05,
-        PARSING_BODY        = 0x06,
+        NONE,
+        PARSING_START_LINE,
+        START_LINE_REQUEST,
+        START_LINE_RESPONSE,
+        HEADER_KEY,
+        HEADER_VALUE,
+        PARSING_BODY,
     };
 
     /**
