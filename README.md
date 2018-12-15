@@ -2,6 +2,7 @@
 
 A header-only HTTP/1.1 request/response builder/parser.
 Depends only on the C++11 standard library.
+Uses the [Catch2](https://github.com/catchorg/Catch2) header-only library for tests.
 
 ## Usage
 
@@ -135,6 +136,10 @@ Connection: keep-alive
 ```
 
 Notice how the request string uses `\r\n` for new lines, this is because the HTTP specification says that lines must be seperated with a carriage return. Thus, the parser only supports this type of line ending.
+
+### Tests
+
+Tests can be built by enabling the `ATOMIZES_ENABLE_TESTS` flag in the CMake project.
 
 ## License
 
