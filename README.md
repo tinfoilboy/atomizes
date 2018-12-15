@@ -1,6 +1,8 @@
 # atomizes
 
 [![Build Status](https://travis-ci.com/tinfoilboy/atomizes.svg?branch=master)](https://travis-ci.com/tinfoilboy/atomizes)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Github Releases](https://img.shields.io/github/release/tinfoilboy/atomizes.svg)](https://github.com/tinfoilboy/atomizes/releases)
 
 A header-only HTTP/1.1 request/response builder/parser.
 Depends only on the C++11 standard library.
