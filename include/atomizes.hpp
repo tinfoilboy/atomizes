@@ -481,6 +481,14 @@ namespace atomizes
             return m_body.size();
         }
 
+        /**
+         * Return the amount of headers in the message.
+         */
+        inline size_t HeaderCount()
+        {
+            return m_headers.size();
+        }
+
     private:
         /**
          * The HTTP method for this message.
