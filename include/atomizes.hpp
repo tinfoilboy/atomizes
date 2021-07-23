@@ -74,8 +74,6 @@ namespace atomizes
     {
         switch (method)
         {
-        case MessageMethod::NONE:
-            return "NONE";
         case MessageMethod::GET:
             return "GET";
         case MessageMethod::HEAD:
@@ -92,6 +90,9 @@ namespace atomizes
             return "TRACE";
         case MessageMethod::PATCH:
             return "PATCH";
+        case MessageMethod::NONE:
+        default:
+            return "NONE";
         }
     }
 
