@@ -64,7 +64,8 @@ namespace atomizes
         DELETE,
         CONNECT,
         TRACE,
-        PATCH
+        PATCH,
+        OPTIONS
     };
 
     /**
@@ -90,6 +91,8 @@ namespace atomizes
             return "TRACE";
         case MessageMethod::PATCH:
             return "PATCH";
+        case MessageMethod::OPTIONS:
+            return "OPTIONS";
         case MessageMethod::NONE:
         default:
             return "NONE";
@@ -119,6 +122,8 @@ namespace atomizes
             return MessageMethod::TRACE;
         if (method == "PATCH")
             return MessageMethod::PATCH;
+        if (method == "OPTIONS")
+            return MessageMethod::OPTIONS;
 
         return MessageMethod::NONE;
     }
